@@ -26,6 +26,6 @@ hs_err_pid*
 
 /tsaver.properties
 /out/
-/.gradle/
+#/.gradle/
 /build/
 /src/main/resources/application.properties
