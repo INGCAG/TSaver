@@ -44,7 +44,7 @@ public class CtrlUser {
         userRepository.save(user);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/{id}").buildAndExpand(user.getUserId()).toUri());
+        headers.setLocation(ucBuilder.path("/get/{id}").buildAndExpand(user.getUserId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
