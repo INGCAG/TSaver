@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Component
 public class Tweet {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "ID_TWEET", nullable = false)
     private Long tweetInternalId;
 

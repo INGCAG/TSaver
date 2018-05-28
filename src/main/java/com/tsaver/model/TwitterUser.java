@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Component
 public class TwitterUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID_TWITTER_USER", nullable = false)
     private Long userTwitterId;
 

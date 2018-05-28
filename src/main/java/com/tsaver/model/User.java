@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Component
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID_USER", nullable = false)
     private Long userId;
 
