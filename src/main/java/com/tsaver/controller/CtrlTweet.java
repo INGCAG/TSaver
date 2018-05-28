@@ -41,13 +41,13 @@ public class CtrlTweet {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ResponseEntity<Void> createTweet(@RequestBody Tweet tweet, UriComponentsBuilder ucBuilder) {
-        System.out.println("Saving tweet " + tweet.getTweetInternalId());
+        System.out.println("Saving tweet " + tweet.getId());
 
         twitterUsersRepository.save(tweet.getUser());
         tweetRepository.save(tweet);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/{id}").buildAndExpand(tweet.getTweetInternalId()).toUri());
+        headers.setLocation(ucBuilder.path("/{id}").buildAndExpand(tweet.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
