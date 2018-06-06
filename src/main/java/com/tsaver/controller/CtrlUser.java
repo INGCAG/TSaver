@@ -64,7 +64,7 @@ public class CtrlUser {
         return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public ResponseEntity<User> deleteUser(@PathVariable("id") long id) {
         System.out.println("Deleting User " + id);
         Optional<User> u = userRepository.findById(id);
@@ -78,7 +78,7 @@ public class CtrlUser {
         return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
     }
 
-    @RequestMapping(value = "/del", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/del", method = RequestMethod.POST)
     public ResponseEntity<User> deleteAll() {
         System.out.println("Deleting All Users ");
 

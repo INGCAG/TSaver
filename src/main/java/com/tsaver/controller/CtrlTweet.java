@@ -51,7 +51,7 @@ public class CtrlTweet {
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public ResponseEntity<Tweet> deleteTweet(@PathVariable("id") long id) {
         System.out.println("Deleting tweet " + id);
         Optional<Tweet> u = tweetRepository.findById(id);
@@ -65,7 +65,7 @@ public class CtrlTweet {
         return new ResponseEntity<Tweet>(HttpStatus.NO_CONTENT);
     }
 
-    @RequestMapping(value = "/del", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/del", method = RequestMethod.POST)
     public ResponseEntity<Tweet> deleteAll() {
         System.out.println("Deleting all tweets ");
 
