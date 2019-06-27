@@ -1,4 +1,4 @@
-package com.tsaver.api;
+package com.api;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,8 +25,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "TSaver API",
-                "Twitter Saver based on RESTful Web Services.",
+                "IoT API",
+                "IoT API based on RESTful Web Services.",
                 "SNAPSHOT",
                 "None",
                 new Contact("INGCAG", null, null),

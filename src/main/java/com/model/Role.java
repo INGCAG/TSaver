@@ -1,4 +1,4 @@
-package com.tsaver.model;
+package com.model;
 
 import org.springframework.stereotype.Component;
 

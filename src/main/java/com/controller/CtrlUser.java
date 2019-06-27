@@ -1,7 +1,7 @@
-package com.tsaver.controller;
+package com.controller;
 
-import com.tsaver.model.User;
-import com.tsaver.repository.Users;
+import com.model.User;
+import com.repository.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -1,12 +1,13 @@
-package com.tsaver.repository;
+package com.repository;
 
-import com.tsaver.model.TwitterUser;
 import org.springframework.data.repository.CrudRepository;
+
+import com.model.User;
 
 import java.util.Optional;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
-public interface TwitterUsers extends CrudRepository<TwitterUser, Long> {
-    Optional<TwitterUser> findById(Long userId);
+public interface Users extends CrudRepository<User, Long> {
+    Optional<User> findById(Long userId);
 }
