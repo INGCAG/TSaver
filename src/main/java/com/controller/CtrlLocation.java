@@ -27,11 +27,11 @@ public class CtrlLocation {
     @RequestMapping(path="/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Location> getLocation(@PathVariable("id") long id){
         System.out.println("Fetching Location with id " + id);
-        Optional<Location> r = locationRepository.findById(id);
-        if (r.get() == null) {
+        Optional<Location> l = locationRepository.findById(id);
+        if (l.get() == null) {
             System.out.println("Location with id " + id + " not found");
             return new ResponseEntity<Location>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Location>(r.get(), HttpStatus.OK);
+        return new ResponseEntity<Location>(l.get(), HttpStatus.OK);
     }
 }

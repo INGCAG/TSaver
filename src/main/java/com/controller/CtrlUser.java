@@ -64,7 +64,7 @@ public class CtrlUser {
         return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<User> deleteUser(@PathVariable("id") long id) {
         System.out.println("Deleting User " + id);
         Optional<User> u = userRepository.findById(id);

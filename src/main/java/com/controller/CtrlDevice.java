@@ -27,11 +27,11 @@ public class CtrlDevice {
     @RequestMapping(path="/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Device> getDevice(@PathVariable("id") long id){
         System.out.println("Fetching Device with id " + id);
-        Optional<Device> r = deviceRepository.findById(id);
-        if (r.get() == null) {
+        Optional<Device> d = deviceRepository.findById(id);
+        if (d.get() == null) {
             System.out.println("Device with id " + id + " not found");
             return new ResponseEntity<Device>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Device>(r.get(), HttpStatus.OK);
+        return new ResponseEntity<Device>(d.get(), HttpStatus.OK);
     }
 }
