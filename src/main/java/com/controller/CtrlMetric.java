@@ -21,7 +21,6 @@ public class CtrlMetric {
 
     @CrossOrigin(origins = "https://master-seu-iot-rest.herokuapp.com")
     @GetMapping(path="/lst") // Map ONLY GET Requests
-//    @GetMapping(path="/metric-javaconfig")
     public @ResponseBody
     Iterable<Metric> listMetrics() {
         // This returns a JSON or XML with the metrics
