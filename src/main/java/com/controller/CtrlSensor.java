@@ -21,7 +21,8 @@ public class CtrlSensor {
     @RequestMapping(path="/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Sensor> getSensor(@PathVariable("id") long id){
         System.out.println("Fetching Sensor with id " + id);
-        Optional<Sensor> s = sensorsRepository.findById(id);
+        Sensor se = new Sensor(id, 25.5);
+        Optional<Sensor> s = Optional.of(se);//sensorsRepository.findById(id);
         if (s.get() == null) {
             System.out.println("Sensor with id " + id + " not found");
             return new ResponseEntity<Sensor>(HttpStatus.NOT_FOUND);
