@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="seu.iot.rest.api.main" target="1.8" />
+      <module name="seu.iot.rest.api.test" target="1.8" />
       <module name="TSaver.main" target="1.8" />
       <module name="TSaver.test" target="1.8" />
     </bytecodeTargetLevel>
