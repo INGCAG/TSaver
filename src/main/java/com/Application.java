@@ -13,12 +13,12 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/metric-javaconfig").allowedOrigins("https://master-seu-iot-rest.herokuapp.com/");
-			}
-		};
-	}
+//	public WebMvcConfigurer corsConfigurer() {
+//		return new WebMvcConfigurer() {
+//			@Override
+//			public void addCorsMappings(CorsRegistry registry) {
+//				registry.addMapping("/metric-javaconfig").allowedOrigins("https://master-seu-iot-rest.herokuapp.com");
+//			}
+//		};
+//	}
 }
