@@ -43,6 +43,9 @@ public class Metric {
     @Column(name = "LONGITUDE")
     private Double longitude;
 
+    @Column(name = "SENSOR_TEMPERTAURE")
+    private Double sensorTemperature;
+
     public Metric(){
     }
 
@@ -50,7 +53,7 @@ public class Metric {
         this.metricId = metricId;
     }
 
-    public Metric(Long metricId, Double temperature, Double humidity, Double windSpeed, Date dateTime, String icon, Long userId, Long deviceId, Double latitude, Double longitude) {
+    public Metric(Long metricId, Double temperature, Double humidity, Double windSpeed, Date dateTime, String icon, Long userId, Long deviceId, Double latitude, Double longitude, Double sensorTemperature) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.metricId = metricId;
@@ -61,6 +64,7 @@ public class Metric {
         this.icon = icon;
         this.userId = userId;
         this.deviceId = deviceId;
+        this.sensorTemperature = sensorTemperature;
     }
 
     public Long getMetricId() {
@@ -101,6 +105,10 @@ public class Metric {
 
     public Double getLongitude() {
         return longitude;
+    }
+
+    public Double getSensorTemperature() {
+        return sensorTemperature;
     }
 
 }

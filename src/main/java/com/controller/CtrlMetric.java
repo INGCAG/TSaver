@@ -59,7 +59,7 @@ public class CtrlMetric {
             return new ResponseEntity<Metric>(HttpStatus.NOT_FOUND);
         }
 
-        Metric updatedMetric = new Metric(m.get().getMetricId(),metric.getTemperature(),metric.getHumidity(),metric.getWindSpeed(), metric.getDateTime(), metric.getIcon(), metric.getDeviceId(), metric.getUserId(), metric.getLatitude(), metric.getLongitude());
+        Metric updatedMetric = new Metric(m.get().getMetricId(),metric.getTemperature(),metric.getHumidity(),metric.getWindSpeed(), metric.getDateTime(), metric.getIcon(), metric.getDeviceId(), metric.getUserId(), metric.getLatitude(), metric.getLongitude(), metric.getSensorTemperature());
 
         metricsRepository. save(updatedMetric);
         return new ResponseEntity<Metric>(updatedMetric, HttpStatus.OK);
