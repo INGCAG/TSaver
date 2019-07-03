@@ -43,7 +43,7 @@ public class Metric {
     @Column(name = "LONGITUDE")
     private Double longitude;
 
-    @Column(name = "SENSOR_TEMPERTAURE")
+    @Column(name = "SENSOR_TEMPERATURE")
     private Double sensorTemperature;
 
     public Metric(){
