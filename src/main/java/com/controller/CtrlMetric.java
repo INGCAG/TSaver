@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.Iterator;
 import java.util.Optional;
 
 @RestController
@@ -25,6 +26,19 @@ public class CtrlMetric {
     Iterable<Metric> listMetrics() {
         // This returns a JSON or XML with the metrics
         return metricsRepository.findAll();
+    }
+
+    @RequestMapping(value = "/count", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Long> countAll() {
+        System.out.println("Counting All Metrics ");
+
+        Iterator i = metricsRepository.findAll().iterator();
+        Long c = 0L;
+        while(i.hasNext()) {
+            c++;
+            i.next();
+        }
+        return new ResponseEntity<Long>(c, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -80,10 +94,10 @@ public class CtrlMetric {
     }
 
     @RequestMapping(value = "/del", method = RequestMethod.POST)
-    public ResponseEntity<Metric> deleteAll() {
+    public ResponseEntity<Void> deleteAll() {
         System.out.println("Deleting All Metrics ");
 
         metricsRepository. deleteAll();
-        return new ResponseEntity<Metric>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 }
