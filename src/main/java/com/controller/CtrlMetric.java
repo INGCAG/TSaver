@@ -39,7 +39,7 @@ public class CtrlMetric {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ResponseEntity<Void> createMetric(@RequestBody Metric metric,    UriComponentsBuilder ucBuilder) {
+    public ResponseEntity<Void> createMetric(@RequestBody Metric metric, UriComponentsBuilder ucBuilder) {
         System.out.println("Saving Metric " + metric.getMetricId());
 
         metricsRepository.save(metric);
